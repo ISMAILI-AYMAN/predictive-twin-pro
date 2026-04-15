@@ -1,0 +1,12 @@
+simpy
+numpy
+kafka-python
+pyspark
+alibi-detect
+mlflow
+fastapi
+uvicorn
+streamlit
+requests
+torch
+streamlit-autorefresh

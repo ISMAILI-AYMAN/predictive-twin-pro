@@ -1,0 +1,53 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Build and packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and coverage outputs
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Environment and local config
+.env
+.env.*
+!.env.example
+
+# Runtime and logs
+*.log
+*.pid
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local ML/metrics artifacts (keep folder structure only)
+experiments/artifacts/*
+!experiments/artifacts/.gitkeep
+experiments/metrics/*.db
+experiments/metrics/*.sqlite
+experiments/metrics/*.sqlite3
+
+# MLflow local tracking store
+experiments/mlflow/mlruns/
+experiments/mlflow/mlartifacts/

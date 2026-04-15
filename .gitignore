@@ -44,9 +44,13 @@ Thumbs.db
 # Local ML/metrics artifacts (keep folder structure only)
 experiments/artifacts/*
 !experiments/artifacts/.gitkeep
+experiments/metrics/*
+!experiments/metrics/.gitkeep
 experiments/metrics/*.db
 experiments/metrics/*.sqlite
 experiments/metrics/*.sqlite3
+experiments/metrics/*.db-*
+experiments/metrics/*.corrupt.*
 
 # MLflow local tracking store
 experiments/mlflow/mlruns/

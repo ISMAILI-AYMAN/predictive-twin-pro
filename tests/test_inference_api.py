@@ -1,10 +1,21 @@
+import importlib
+import os
+from pathlib import Path
+
 from fastapi.testclient import TestClient
 
-from ml_service.inference_api import app
+
+def _build_client() -> TestClient:
+    test_db = Path("experiments/metrics/test_inference_api.db")
+    os.environ["METRICS_DB_PATH"] = str(test_db)
+    from ml_service import inference_api
+
+    importlib.reload(inference_api)
+    return TestClient(inference_api.app)
 
 
 def test_infer_endpoint_contract() -> None:
-    client = TestClient(app)
+    client = _build_client()
     payload = {
         "timestamp": 1_700_000_000.0,
         "asset_id": "A1",
@@ -23,7 +34,7 @@ def test_infer_endpoint_contract() -> None:
 
 
 def test_metrics_history_endpoint() -> None:
-    client = TestClient(app)
+    client = _build_client()
     payload = {
         "timestamp": 1_700_000_123.0,
         "asset_id": "A2",
